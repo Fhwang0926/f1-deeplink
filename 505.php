@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <link rel="stylesheet" href="resource/index.css">
-    <!-- <link rel="stylesheet" href="resource/null.css"> -->
+    <link rel="stylesheet" href="resource/null.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sample HTML Page</title>
@@ -32,7 +32,9 @@
         </section>
       </a>
       <section>
-        <img src="resource/test.php.png" alt="" srcset="">
+        <?php
+            phpinfo1();
+        ?>
     </section>
 </body>
 </html>
