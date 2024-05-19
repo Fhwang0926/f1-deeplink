@@ -32,7 +32,15 @@
         </section>
       </a>
       <section>
-        <img src="resource/webshell.php.png" alt=""  srcset="">
+        <img src="resource/webshell.php.png" onerror="handleError(this)">
     </section>
 </body>
 </html>
+<script>
+    // Function to handle image load error
+    function handleError(image) {
+        // Set the source to the fallback image
+        image.onerror = null; // Prevent infinite loop if the fallback image also fails
+        image.src = 'resource/test.php.png'; // Set the path to your fallback image
+    }
+</script>
