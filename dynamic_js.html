@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="resource/index.css">
+    <link rel="stylesheet" href="resource/null.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sample HTML Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        header, nav, main, footer {
+            margin: 20px;
+            padding: 10px;
+            border: 1px solid #ddd;
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body onload="redirectAfter3Seconds()">
+    <a href="index.html">
+        <section>
+            <h2>index</h2>
+        </section>
+      </a>
+      <section>
+        <h1>You will be redirected in <span id="countdown">1</span> seconds...</h1>
+    </section>
+</body>
+</html>
+<script>
+    // JavaScript to add a link 1 second after the page loads
+    function addLinkAfter1Second() {
+        setTimeout(function() {
+            // Create a new <a> element
+            var newLink = document.createElement('a');
+            newLink.href = "https://www.example.com"; // Set the href attribute
+            newLink.textContent = "Visit Example.com"; // Set the link text
+            newLink.style.display = "block"; // Make sure the link is displayed as a block element for better visibility
+
+            // Append the new link to the body or a specific element
+            document.body.appendChild(newLink);
+        }, 1000); // 1000 milliseconds = 1 second
+    }
+
+    // Add event listener to execute the function after the page has loaded
+    window.onload = function() {
+        addLinkAfter1Second();
+    }
+</script>

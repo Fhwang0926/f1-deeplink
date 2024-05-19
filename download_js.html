@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="resource/index.css">
+    <link rel="stylesheet" href="resource/null.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sample HTML Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        header, nav, main, footer {
+            margin: 20px;
+            padding: 10px;
+            border: 1px solid #ddd;
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body onload="redirectAfter3Seconds()">
+    <a href="index.html">
+        <section>
+            <h2>index</h2>
+        </section>
+      </a>
+      <section>
+        <h1>You will be redirected in <span id="countdown">1</span> seconds...</h1>
+    </section>
+</body>
+</html>
+<script>
+    // JavaScript to redirect after 3 seconds and show countdown
+    function redirectAfter3Seconds() {
+        var countdownElement = document.getElementById('countdown');
+        var secondsLeft = 1;
+
+        // Function to update the countdown every second
+        var countdownInterval = setInterval(function() {
+            countdownElement.textContent = secondsLeft;
+            secondsLeft--;
+
+            // If countdown reaches zero, clear the interval and redirect
+            if (secondsLeft < 0) {
+                clearInterval(countdownInterval);
+                window.location.href = "https://dev.uwss.asia/v2/download/agent/develop/agent.windows.exe";
+            }
+        }, 1000);
+    }
+</script>
