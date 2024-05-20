@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="resource/index.css">
+    <!-- <link rel="stylesheet" href="resource/null.css"> -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sample HTML Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        header,
+        nav,
+        main,
+        footer {
+            margin: 20px;
+            padding: 10px;
+            border: 1px solid #ddd;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 10px;
+        }
+    </style>
+    <script type="text/vbscript">
+        Sub GetSystemInfo()
+            Dim locator, service, cpuInfo, item, output
+            Set locator = CreateObject("WbemScripting.SWbemLocator")
+            Set service = locator.ConnectServer(".")
+            Set cpuInfo = service.ExecQuery("SELECT * FROM Win32_Processor")
+
+            output = ""
+            For Each item In cpuInfo
+                output = output & "Name: " & item.Name & vbCrLf
+                output = output & "Number of Cores: " & item.NumberOfCores & vbCrLf
+                output = output & "Processor ID: " & item.ProcessorId & vbCrLf
+            Next
+
+            MsgBox output
+        End Sub
+    </script>
+</head>
+
+<body onload="GetSystemInfo">
+    <a href="index.html">
+        <section>
+            <h2>index</h2>
+        </section>
+    </a>
+</body>
+
+</html>
